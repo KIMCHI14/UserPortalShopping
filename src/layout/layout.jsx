@@ -1,47 +1,48 @@
-import React from 'react';
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
+import { UserOutlined } from '@ant-design/icons'
+import { Layout, Menu, theme } from 'antd'
+import React from 'react'
+const { Header, Content, Footer, Sider } = Layout
 const items1 = ['1', '2', '3'].map((key) => ({
   key,
   label: `nav ${key}`,
-}));
-const menu=[
-    {
-        key:1,
-        name:'User',
-        icon:UserOutlined
-    },
-    {
-        key:2,
-        name:'Product',
-        icon:UserOutlined
-    },
-    {
-        key:3,
-        name:'Order',
-        icon:UserOutlined
-    }
+}))
+const menu = [
+  {
+    key: 1,
+    name: 'User',
+    icon: UserOutlined,
+  },
+  {
+    key: 2,
+    name: 'Product',
+    icon: UserOutlined,
+  },
+  {
+    key: 3,
+    name: 'Order',
+    icon: UserOutlined,
+  },
 ]
 const items2 = menu.map((menu, index) => {
-  const key = String(index);
+  const key = String(index)
   return {
     key: `sub${key}`,
     icon: React.createElement(menu.icon),
     label: menu.name,
     children: new Array(4).fill(null).map((_, j) => {
-      const subKey = index * 4 + j + 1;
+      const subKey = index * 4 + j + 1
       return {
         key: subKey,
         label: `option${subKey}`,
-      };
+      }
     }),
-  };
-});
-const LayoutDashboard = ({children}) => {
+  }
+})
+
+const LayoutDashboard = ({ children }) => {
   const {
     token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+  } = theme.useToken()
   return (
     <Layout>
       <Header
@@ -117,6 +118,6 @@ const LayoutDashboard = ({children}) => {
         {/* Ant Design ©{new Date().getFullYear()} Created by Ant UED */}
       </Footer>
     </Layout>
-  );
-};
-export default LayoutDashboard;
+  )
+}
+export default LayoutDashboard

@@ -1,13 +1,13 @@
-import './App.css';
-import LayoutDashboard from './component/layout/layout';
-import MainLayout from './component/layout/mainLayout';
-import Homepage from './page/HomePage/HomePage';
+import './App.css'
+// import LayoutDashboard from './component/layout/layout'
+import MainLayout from './layout/mainLayout'
+import RoutesComponent from './layout/Routes.tsx'
 function App() {
   return (
     <MainLayout>
-      <Homepage />
+      <RoutesComponent />
     </MainLayout>
-  );
+  )
 }
 
-export default App;
+export default App
