@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import LayoutDashboard from './component/layout';
-import { Button } from 'antd';
-
+import LayoutDashboard from './component/layout/layout';
+import MainLayout from './component/layout/mainLayout';
+import Homepage from './page/HomePage/HomePage';
 function App() {
   return (
-    <>
-  <LayoutDashboard />
-  </>
+    <MainLayout>
+      <Homepage />
+    </MainLayout>
   );
 }
 

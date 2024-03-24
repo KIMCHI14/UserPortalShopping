@@ -38,7 +38,7 @@ const items2 = menu.map((menu, index) => {
     }),
   };
 });
-const LayoutDashboard = () => {
+const LayoutDashboard = ({children}) => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -50,7 +50,7 @@ const LayoutDashboard = () => {
           alignItems: 'center',
         }}
       >
-        <div className="demo-logo" />
+        {/* <div className="demo-logo" />
         <Menu
           theme="dark"
           mode="horizontal"
@@ -60,7 +60,7 @@ const LayoutDashboard = () => {
             flex: 1,
             minWidth: 0,
           }}
-        />
+        /> */}
       </Header>
       <Content
         style={{
@@ -105,7 +105,7 @@ const LayoutDashboard = () => {
               minHeight: 280,
             }}
           >
-            Content
+            {children}
           </Content>
         </Layout>
       </Content>

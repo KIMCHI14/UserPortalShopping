@@ -1,0 +1,42 @@
+.container {
+    .navigation-container {
+        display: flex;
+        justify-content: space-between;
+
+        .navigation {
+            display: flex;
+            margin-left: 5em;
+
+            .navigation-obj {
+                color: black;
+                margin: 1em;
+                text-decoration: none;
+                font-weight: 500;
+            }
+        }
+
+        .right-navigation {
+            display: flex;
+            margin-right: 2em;
+
+            .icon {
+                font-size: 1em;
+                display: flex;
+                margin: 1em;
+                margin-top: 1.5em;
+            }
+
+            .search-bar {
+                margin-top: 1em;
+            }
+        }
+    }
+
+    .name-shop {
+        display: flex;
+        justify-content: center;
+        font-size: 3.2em;
+        font-weight: 400;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+}
