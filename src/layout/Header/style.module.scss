@@ -1,50 +1,29 @@
 .container {
-    .navigation-container {
-        display: flex;
-        justify-content: space-between;
+  .navigation-container {
+    display: flex;
+    justify-content: space-between;
 
-        .navigation {
-            display: flex;
-            margin-left: 5em;
-
-            .navigation-obj {
-                color: black;
-                margin: 1em;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.2s ease-in-out 0s;
-
-                &:hover {
-                    border-bottom: 2px solid grey;
-                    transition: all 0.2s ease-in-out 0s;
-                }
-            }
-
-
+    .navigation {
+      width: 100%;
+      padding: 20px 10px;
+      .menu-item {
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 25px;
+        &:hover {
+          border-bottom: 1px solid grey;
+          transition: all 0.2s ease-in-out 0s;
+          padding-bottom: 10px;
         }
-
-        .right-navigation {
-            display: flex;
-            margin-right: 2em;
-
-            .icon {
-                font-size: 1em;
-                display: flex;
-                margin: 1em;
-                margin-top: 1.5em;
-            }
-
-            .search-bar {
-                margin-top: 1em;
-            }
-        }
+      }
     }
+  }
 
-    .name-shop {
-        display: flex;
-        justify-content: center;
-        font-size: 3.2em;
-        font-weight: 400;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
+  .name-shop {
+    font-family: 'Inter';
+    font-size: 3.2em;
+    text-align: center;
+    font-weight: 400;
+    padding-bottom: 10px;
+  }
 }

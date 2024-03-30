@@ -1,7 +1,8 @@
 import Footer from './Footer'
 import Header from './Header'
-
-function MainLayout({ children }) {
+import React from 'react'
+import PropTypes from 'prop-types'
+const MainLayout = ({ children }) => {
   return (
     <>
       <Header />
@@ -9,6 +10,9 @@ function MainLayout({ children }) {
       <Footer />
     </>
   )
+}
+MainLayout.propTypes = {
+  children: PropTypes.any,
 }
 
 export default MainLayout

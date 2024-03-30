@@ -1,9 +1,23 @@
 import { Link } from 'react-router-dom'
 import classNames from 'classnames/bind'
 import styles from './style.module.scss'
+import { useEffect } from 'react'
+import { getProducts } from '../../../../api'
+import React, { useState } from 'react'
+import { Flex } from 'antd'
+import PropTypes from 'prop-types'
 function NewCollection(props) {
   console.log('props', props)
   const cx = classNames.bind(styles)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    getProducts().then((res) => {
+      console.log('res', res)
+      const { data } = res
+      setProducts(data)
+    })
+  }, [])
 
   return (
     <>
@@ -22,31 +36,19 @@ function NewCollection(props) {
           </div>
         </div>
       </div>
-      {/* <div className={cx('collection')}>
-                <div className={cx('collection-obj')}>
-                    <div>
-                        <img src='/hinhao2.jpg'></img>
-                    </div>
-                    <div>
-                        <img src='/hinhao2.jpg'></img>
-                    </div>
-                    <div>
-                        <img src='/hinhao2.jpg'></img>
-                    </div>
-                </div>
-            </div> */}
 
-      <div
-        style={{
-          width: '100vw',
-          height: '80vh',
-          display: 'flex',
-          justifyContent: 'center',
-          maxWidth: '100%',
-        }}
-      >
+      <Flex>
         {/* item1 */}
-        <div style={{ width: '23vw', height: '40vh', margin: '2em', overflow: 'hidden', perspective: '1000px' }}>
+
+        {/* <div
+          style={{
+            width: '23vw',
+            height: '40vh',
+            margin: '2em',
+            overflow: 'hidden',
+            perspective: '1000px',
+          }}
+        >
           <div
             style={{
               background: "url('hinhao2.jpg')",
@@ -59,12 +61,13 @@ function NewCollection(props) {
               // transition: 'transform 0.5s',
               // transform: 'scale(1.2)',
               transform: 'scale(1)',
-              transition: 'transform 0.5s'
+              transition: 'transform 0.5s',
             }}
-            onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.2)'}
-            onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            onMouseOver={(e) =>
+              (e.currentTarget.style.transform = 'scale(1.2)')
+            }
+            onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           />
-
 
           <div
             style={{
@@ -77,10 +80,10 @@ function NewCollection(props) {
             <h3 style={{ margin: '0.5em' }}>Product name</h3>
             <p style={{ margin: '0.5em' }}>Product Price</p>
           </div>
-        </div>
+        </div> */}
 
         {/* item2 */}
-        <div style={{ width: '23vw', height: '40vh', margin: '2em' }}>
+        {/* <div style={{ width: '23vw', height: '40vh', margin: '2em' }}>
           <div
             style={{
               background: "url('hinhao2.jpg')",
@@ -103,10 +106,10 @@ function NewCollection(props) {
             <h3 style={{ margin: '0.5em' }}>Product name</h3>
             <p style={{ margin: '0.5em' }}>Product Price</p>
           </div>
-        </div>
+        </div> */}
 
         {/* item3 */}
-        <div style={{ width: '23vw', height: '40vh', margin: '2em' }}>
+        {/* <div style={{ width: '23vw', height: '40vh', margin: '2em' }}>
           <div
             style={{
               background: "url('hinhao2.jpg')",
@@ -129,12 +132,10 @@ function NewCollection(props) {
             <h3 style={{ margin: '0.5em' }}>Product name</h3>
             <p style={{ margin: '0.5em' }}>Product Price</p>
           </div>
-        </div>
-      </div>
+        </div> */}
+      </Flex>
 
-
-
-      <div
+      {/* <div
         style={{
           width: '100vw',
           height: '80vh',
@@ -142,9 +143,9 @@ function NewCollection(props) {
           justifyContent: 'center',
           maxWidth: '100%',
         }}
-      >
-        {/* item4 */}
-        <div style={{ width: '23vw', height: '40vh', margin: '2em' }}>
+      > */}
+      {/* item4 */}
+      {/* <div style={{ width: '23vw', height: '40vh', margin: '2em' }}>
           <div
             style={{
               background: "url('hinhao2.jpg')",
@@ -155,8 +156,7 @@ function NewCollection(props) {
               height: '40vh',
               borderRadius: '20px',
             }}
-          >
-          </div>
+          ></div>
           <div
             style={{
               display: 'flex',
@@ -168,10 +168,10 @@ function NewCollection(props) {
             <h3 style={{ margin: '0.5em' }}>Product name</h3>
             <p style={{ margin: '0.5em' }}>Product Price</p>
           </div>
-        </div>
+        </div> */}
 
-        {/* item5 */}
-        <div style={{ width: '23vw', height: '40vh', margin: '2em' }}>
+      {/* item5 */}
+      {/* <div style={{ width: '23vw', height: '40vh', margin: '2em' }}>
           <div
             style={{
               background: "url('hinhao2.jpg')",
@@ -182,8 +182,7 @@ function NewCollection(props) {
               height: '40vh',
               borderRadius: '20px',
             }}
-          >
-          </div>
+          ></div>
           <div
             style={{
               display: 'flex',
@@ -195,10 +194,10 @@ function NewCollection(props) {
             <h3 style={{ margin: '0.5em' }}>Product name</h3>
             <p style={{ margin: '0.5em' }}>Product Price</p>
           </div>
-        </div>
+        </div> */}
 
-        {/* item6 */}
-        <div style={{ width: '23vw', height: '40vh', margin: '2em' }}>
+      {/* item6 */}
+      {/* <div style={{ width: '23vw', height: '40vh', margin: '2em' }}>
           <div
             style={{
               background: "url('hinhao2.jpg')",
@@ -209,8 +208,7 @@ function NewCollection(props) {
               height: '40vh',
               borderRadius: '20px',
             }}
-          >
-          </div>
+          ></div>
           <div
             style={{
               display: 'flex',
@@ -222,8 +220,8 @@ function NewCollection(props) {
             <h3 style={{ margin: '0.5em' }}>Product name</h3>
             <p style={{ margin: '0.5em' }}>Product Price</p>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
       {/* <div
         style={{
           width: '100vw',
@@ -235,12 +233,10 @@ function NewCollection(props) {
       >
       </div>
  */}
-
-
     </>
   )
-};
-
-
-
+}
+NewCollection.propTypes = {
+  title: PropTypes.string.isRequired,
+}
 export default NewCollection

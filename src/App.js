@@ -1,5 +1,4 @@
-import './App.css'
-// import LayoutDashboard from './component/layout/layout'
+import React from 'react'
 import MainLayout from './layout/mainLayout'
 import RoutesComponent from './layout/Routes.tsx'
 function App() {
