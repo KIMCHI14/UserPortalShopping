@@ -12,7 +12,15 @@
                 margin: 1em;
                 text-decoration: none;
                 font-weight: 500;
+                transition: all 0.2s ease-in-out 0s;
+
+                &:hover {
+                    border-bottom: 2px solid grey;
+                    transition: all 0.2s ease-in-out 0s;
+                }
             }
+
+
         }
 
         .right-navigation {
