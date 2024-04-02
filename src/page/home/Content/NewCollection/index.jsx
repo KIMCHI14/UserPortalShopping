@@ -6,19 +6,33 @@ import { getProducts } from '../../../../api'
 import React, { useState } from 'react'
 import { Flex } from 'antd'
 import PropTypes from 'prop-types'
+import ItemProduct from './item'
+import { newColletion } from './api'
+import axios from 'axios'
+
+
+
 function NewCollection(props) {
+  const [products, setProducts] = useState();
   console.log('props', props)
   const cx = classNames.bind(styles)
-  const [products, setProducts] = useState([])
+  // const [products, setProducts] = useState([])
 
   useEffect(() => {
-    getProducts().then((res) => {
-      console.log('res', res)
-      const { data } = res
-      setProducts(data)
-    })
+    axios.get('http://localhost:3001/products/')
+      .then(function (response) {
+        // handle success
+        setProducts(response.data)
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
   }, [])
-
+  console.log(products)
   return (
     <>
       <div className={cx('content')}>
@@ -37,50 +51,18 @@ function NewCollection(props) {
         </div>
       </div>
 
-      <Flex>
+      <Flex wrap="wrap" style={{ margin: '0 20px 40px', justifyContent: 'center' }}>
         {/* item1 */}
 
-        {/* <div
-          style={{
-            width: '23vw',
-            height: '40vh',
-            margin: '2em',
-            overflow: 'hidden',
-            perspective: '1000px',
-          }}
-        >
-          <div
-            style={{
-              background: "url('hinhao2.jpg')",
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center',
-              width: '23vw',
-              height: '40vh',
-              borderRadius: '20px',
-              // transition: 'transform 0.5s',
-              // transform: 'scale(1.2)',
-              transform: 'scale(1)',
-              transition: 'transform 0.5s',
-            }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.transform = 'scale(1.2)')
-            }
-            onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-          />
-
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              flexDirection: 'column',
-            }}
-          >
-            <h3 style={{ margin: '0.5em' }}>Product name</h3>
-            <p style={{ margin: '0.5em' }}>Product Price</p>
-          </div>
-        </div> */}
+        {products?.map(product => {
+          return (
+            <ItemProduct
+              productName={product.product_name}
+              productPrice={product.price}
+              productImage={product.product_size[0].images}
+            />
+          )
+        })}
 
         {/* item2 */}
         {/* <div style={{ width: '23vw', height: '40vh', margin: '2em' }}>

@@ -6,12 +6,14 @@
     .navigation {
       width: 100%;
       padding: 20px 10px;
+
       .menu-item {
         cursor: pointer;
         font-weight: 500;
         font-size: 25px;
+
         &:hover {
-          border-bottom: 1px solid grey;
+          border-bottom: 2px solid grey;
           transition: all 0.2s ease-in-out 0s;
           padding-bottom: 10px;
         }
