@@ -3,28 +3,32 @@ import styles from './style.module.scss'
 import { Row, Col, Flex, Input } from 'antd'
 import React from 'react'
 import { MagnifyingGlass, User, ShoppingCart } from '@phosphor-icons/react'
+import { useSearchParams } from 'react-router-dom'
 
 const cx = classNames.bind(styles)
 
 function Header() {
+  let [searchParams, setSearchParams] = useSearchParams()
   return (
     <div className={cx('container')}>
       <div className={cx('navigation-container')}>
         <div className={cx('navigation')}>
           <Row align="middle">
             <Col span={12}>
-              <Flex
-                align="item"
-                gap={10}
-                style={{
-                  minHeight: 40,
-                }}
-              >
-                <div className={cx('menu-item')}>HOME</div>
-                <div className={cx('menu-item')}>PRODUCT</div>
-                <div className={cx('menu-item')}>CONTACT</div>
-                <div className={cx('menu-item')}>ABOUT US</div>
-              </Flex>
+              <ul>
+                <Flex
+                  align="item"
+                  gap={15}
+                  style={{
+                    minHeight: 50,
+                  }}
+                >
+                  <li className={cx('menu-item')}>HOME</li>
+                  <li className={cx('menu-item')}>PRODUCT</li>
+                  <li className={cx('menu-item')}>CONTACT</li>
+                  <li className={cx('menu-item')}>ABOUT US</li>
+                </Flex>
+              </ul>
             </Col>
             <Col span={12}>
               <Flex align="center" gap={10} justify="flex-end">

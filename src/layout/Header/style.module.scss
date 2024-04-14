@@ -6,6 +6,10 @@
     .navigation {
       width: 100%;
       padding: 20px 10px;
+      ul {
+        list-style: none;
+        padding: 0;
+      }
 
       .menu-item {
         cursor: pointer;
@@ -14,8 +18,8 @@
 
         &:hover {
           border-bottom: 2px solid grey;
-          transition: all 0.2s ease-in-out 0s;
-          padding-bottom: 10px;
+          transition: all 0.2s ease-in-out;
+          padding-bottom: 5px;
         }
       }
     }

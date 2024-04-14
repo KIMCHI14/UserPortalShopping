@@ -1,10 +1,21 @@
-import { Col, Flex, Row, Typography } from 'antd'
+import { Col, Flex, Row, Typography, Button } from 'antd'
 import { getProducts } from 'api/productsApi'
 import classNames from 'classnames/bind'
 import { useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 import { formatMoney } from 'utils'
 import ImgForMen from 'assets/img/hinhdoc1.jpg'
+import styled from 'styled-components'
+
+const ButtonCustom = styled(Button)`
+  background-color: #756d6d;
+  padding: 20px;
+  color: #fff;
+  width: 300px;
+  height: 100%;
+  font-size: 30px;
+  border-radius: 30px;
+`
 
 const HomePage = () => {
   const [products, setProducts] = useState([])
@@ -45,7 +56,7 @@ const HomePage = () => {
           </Typography>
         </Flex>
       </div>
-      <Row>
+      <Row gutter={[8, 24]}>
         {products.map((item, index) => {
           return (
             <Col span={8} key={index}>
@@ -85,7 +96,14 @@ const HomePage = () => {
       </Row>
       <div className={cx('section-for-men')}>
         <img src={ImgForMen} alt="" />
-        <Flex vertical align="center">
+        <Flex
+          vertical
+          align="center"
+          gap={10}
+          style={{
+            padding: '40px',
+          }}
+        >
           <Typography
             style={{
               fontWeight: 500,
@@ -102,6 +120,36 @@ const HomePage = () => {
           >
             Minimalist design specifically for men
           </Typography>
+          <ButtonCustom>See Details</ButtonCustom>
+        </Flex>
+      </div>
+      <div className={cx('section-for-men')}>
+        <img src={ImgForMen} alt="" />
+        <Flex
+          vertical
+          align="center"
+          gap={10}
+          style={{
+            padding: '40px',
+          }}
+        >
+          <Typography
+            style={{
+              fontWeight: 500,
+              fontSize: '40px',
+            }}
+          >
+            FOR MEN
+          </Typography>
+          <Typography
+            style={{
+              fontWeight: 300,
+              fontSize: '25px',
+            }}
+          >
+            Minimalist design specifically for men
+          </Typography>
+          <ButtonCustom>See Details</ButtonCustom>
         </Flex>
       </div>
     </>
