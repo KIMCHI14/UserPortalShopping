@@ -1,12 +1,19 @@
-import Footer from './Footer'
-import Header from './Header'
+import Footer from './footer'
+import Header from './header'
 import React from 'react'
 import PropTypes from 'prop-types'
 const MainLayout = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <div
+        style={{
+          height: 'calc(100vh - 351px)',
+        }}
+      >
+        {children}
+      </div>
+
       <Footer />
     </>
   )

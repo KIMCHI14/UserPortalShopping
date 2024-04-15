@@ -6,7 +6,7 @@ import { Flex } from 'antd'
 import { MapPinArea } from '@phosphor-icons/react'
 const cx = classNames.bind(styles)
 
-function Footer() {
+const Footer = () => {
   return (
     <footer className={cx('footer')}>
       <h1>AVACADO SHOP</h1>

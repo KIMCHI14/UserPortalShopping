@@ -1,12 +1,8 @@
 import { UserOutlined } from '@ant-design/icons'
 import { Layout, Menu, theme } from 'antd'
 import React from 'react'
-const { Header, Content, Footer, Sider } = Layout
+const { Header, Content, Sider } = Layout
 
-const items1 = ['1', '2', '3'].map((key) => ({
-  key,
-  label: `nav ${key}`,
-}))
 const menu = [
   {
     key: 1,
